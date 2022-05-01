@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffb6c1;
+}
+
+.container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  padding: 1rem;
+}
+.container .c-p-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.container .cover {
+  aspect-ratio: 1/1;
+  width: 3rem;
+}
+.container .cover img {
+  height: 100%;
+}
+.container .progress-bg {
+  width: 100%;
+  height: 10px;
+  border-radius: 7px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.container .progress-bg .progress {
+  width: 20%;
+  height: 100%;
+  background-color: #ff6aa5;
+}
+.container .controlls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.container .controlls button {
+  border: none;
+  border-radius: 10px 0;
+  padding: 5px 10px;
+}
+
+/*# sourceMappingURL=index.css.map */
