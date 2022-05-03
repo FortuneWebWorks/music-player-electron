@@ -12,12 +12,13 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "build-exe": "npx electron-packager . MusicPlayer --platform win32 --arch x64 --out dist/"
   },
   "keywords": [],
   "author": {
-    "name": "lifeloop2180",
-    "email": "lifeloop2180@gmail.com"
+    "name": "FortuneWebWorks",
+    "website": "https://fortunewebworks.com"
   },
   "license": "MIT",
   "config": {
