@@ -125,9 +125,11 @@ function addToPlayList() {
 
 // Play list click handler
 function playListClickHandler(e) {
-  if (!String(audio.src).includes(e.target.id)) {
-    loadSong(e.target.id);
-    playSong();
+  if (e.target.classList.contains('list-music')) {
+    if (!String(audio.src).includes(e.target.id)) {
+      loadSong(e.target.id);
+      playSong();
+    }
   }
 }
 
