@@ -22,9 +22,16 @@ loadSong(songs[songIndex]);
 
 // Update song details
 function loadSong(song) {
+  document
+    .querySelectorAll('.active')
+    .forEach((item) => item.classList.remove('active'));
+
   title.innerText = song;
   audio.src = `music/${song}.mp3`;
   cover.src = `images/${song}.jpg`;
+  setTimeout(() => {
+    document.getElementById(song).classList.add('active');
+  }, 700);
 }
 
 // Play song
@@ -102,18 +109,17 @@ function addToPlayList() {
       duration = sound.duration;
 
       const date = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
-      console.log(date);
 
       let time = (duration / 60).toFixed(2).toString().split('.');
 
       div.innerHTML = `
-      <img src="./images/${song}.jpg"'>
+      <img src="./images/${song}.jpg">
       <p class="list-music-title">${song}</p>
       <p class="list-music-date">${date}</p>
       <p class="list-music-time">${time[0]}:${time[1]}</p>`;
 
       playList.appendChild(div);
-    }, 200);
+    }, 300);
   });
 }
 

@@ -149,7 +149,7 @@ body {
 }
 
 .play-list {
-  width: 100%;
+  width: 150%;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -166,7 +166,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // border-bottom: 1px solid #fff;
+    transition: all 0.1s ease;
 
     * {
       user-select: none;
@@ -179,4 +179,10 @@ body {
     height: 5rem;
     border-radius: 50%;
   }
+}
+
+.active {
+  background-color: #cdc2d0;
+  border-radius: 15px;
+  padding: 1rem;
 }
