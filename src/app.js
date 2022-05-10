@@ -9,6 +9,8 @@ const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
+const playList = document.getElementById('play-list');
+
 // Song titles
 const songs = ['hey', 'summer', 'ukulele'];
 
@@ -85,6 +87,44 @@ function setProgress(e) {
   audio.currentTime = (clickX / width) * duration;
 }
 
+// Add musics to play list
+function addToPlayList() {
+  songs.forEach((song) => {
+    const div = document.createElement('div');
+    div.className = 'list-music';
+    div.id = song;
+
+    const sound = document.createElement('audio');
+    sound.src = `music/${song}.mp3`;
+    let duration = null;
+
+    setTimeout(() => {
+      duration = sound.duration;
+
+      const date = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
+      console.log(date);
+
+      let time = (duration / 60).toFixed(2).toString().split('.');
+
+      div.innerHTML = `
+      <img src="./images/${song}.jpg"'>
+      <p class="list-music-title">${song}</p>
+      <p class="list-music-date">${date}</p>
+      <p class="list-music-time">${time[0]}:${time[1]}</p>`;
+
+      playList.appendChild(div);
+    }, 200);
+  });
+}
+
+// Play list click handler
+function playListClickHandler(e) {
+  if (!String(audio.src).includes(e.target.id)) {
+    loadSong(e.target.id);
+    playSong();
+  }
+}
+
 // Event listeners
 playBtn.addEventListener('click', () => {
   const isPlaying = musicContainer.classList.contains('play');
@@ -108,3 +148,8 @@ progressContainer.addEventListener('click', setProgress);
 
 // Song ends
 audio.addEventListener('ended', nextSong);
+
+// Playlist click
+playList.addEventListener('click', playListClickHandler);
+
+addToPlayList();

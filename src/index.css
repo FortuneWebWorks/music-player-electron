@@ -132,4 +132,41 @@ body {
   transition: width 0.1s linear;
 }
 
+.main-container {
+  max-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-list {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 15px;
+  padding: 20px 30px;
+  box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
+  background-color: #fff;
+}
+.play-list .list-music {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.play-list .list-music * {
+  user-select: none;
+  pointer-events: none;
+}
+.play-list img {
+  aspect-ratio: 1/1;
+  height: 5rem;
+  border-radius: 50%;
+}
+
 /*# sourceMappingURL=index.css.map */
