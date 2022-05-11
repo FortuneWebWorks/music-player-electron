@@ -22,14 +22,13 @@ loadSong(songs[songIndex]);
 
 // Update song details
 function loadSong(song) {
-  document
-    .querySelectorAll('.active')
-    .forEach((item) => item.classList.remove('active'));
-
   title.innerText = song;
   audio.src = `music/${song}.mp3`;
   cover.src = `images/${song}.jpg`;
   setTimeout(() => {
+    document
+      .querySelectorAll('.active')
+      .forEach((item) => item.classList.remove('active'));
     document.getElementById(song).classList.add('active');
   }, 700);
 }
@@ -114,8 +113,8 @@ function addToPlayList() {
 
       div.innerHTML = `
       <img src="./images/${song}.jpg">
-      <p class="list-music-title">${song}</p>
-      <p class="list-music-date">${date}</p>
+      <div class="title-container"><p class="list-music-title">${song}</p></div>
+      <div class="date-container"><p class="list-music-date">${date}</p></div>
       <p class="list-music-time">${time[0]}:${time[1]}</p>`;
 
       playList.appendChild(div);

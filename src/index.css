@@ -178,4 +178,9 @@ body {
   padding: 1rem;
 }
 
+.title-container {
+  width: 4rem;
+  max-width: 6rem;
+}
+
 /*# sourceMappingURL=index.css.map */
